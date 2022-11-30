@@ -7,10 +7,11 @@ export default class {
   pageUrl: string
   constructor() {
     this.window = null
-    this.iconPath = path.join(__dirname, '/resources/icons/icon.png') 
-    this.pageUrl = process.env.NODE_ENV === 'development'
-      ? `http://127.0.0.1:3000`
-      : `file://${__dirname}/renderer/index.html`
+    this.iconPath = path.join(__dirname, '/resources/icons/icon.png')
+    this.pageUrl =
+      process.env.NODE_ENV === 'development'
+        ? `http://127.0.0.1:3000`
+        : `file://${__dirname}/renderer/index.html`
   }
   init() {
     this.window = new BrowserWindow({
@@ -18,8 +19,8 @@ export default class {
       center: true,
       show: false,
       webPreferences: {
-        nodeIntegration: true
-      }
+        nodeIntegration: true,
+      },
     })
 
     this.window.on('ready-to-show', () => {
@@ -30,7 +31,7 @@ export default class {
       this.window = null
     })
 
-   this.window.loadURL(this.pageUrl)
+    this.window.loadURL(this.pageUrl)
   }
   toggle() {
     if (this.window === null) {

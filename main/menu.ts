@@ -8,25 +8,25 @@ const appMenu = new MenuItem({
   submenu: [
     {
       label: '关于',
-      role: 'about'
+      role: 'about',
     },
     {
-      type: 'separator'
+      type: 'separator',
     },
     {
       label: '偏好设置',
       click: () => {
         preferenceWindow.toggle()
-      }
+      },
     },
     { type: 'separator' },
     {
       label: '退出',
       click() {
         app.quit()
-      }
-    }
-  ]
+      },
+    },
+  ],
 })
 const viewMenu = new MenuItem({
   role: 'viewMenu',

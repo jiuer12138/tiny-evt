@@ -9,12 +9,12 @@ export default class PreferenceWindow {
       width: 400,
       height: 300,
       webPreferences: {
-        nodeIntegration: true
-      }
+        nodeIntegration: true,
+      },
     }
     this.window = null
   }
-  init(){
+  init() {
     this.window = new BrowserWindow(this.option)
     // this.window.on('ready-to-show', () => {
     //   this.window?.show()

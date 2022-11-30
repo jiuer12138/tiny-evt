@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from "vue-router"
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 import ViewA from './components/ViewA.vue'
 import ViewB from './components/ViewB.vue'
@@ -13,7 +13,7 @@ const router = createRouter({
     { path: '/b', component: ViewB },
     { path: '/c', component: ViewC },
     { path: '/d', component: ViewD },
-  ]
+  ],
 })
 
 export default router

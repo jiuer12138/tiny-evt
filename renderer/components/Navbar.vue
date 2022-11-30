@@ -1,9 +1,17 @@
 <template>
-  <div id='nav'>
-    <router-link to='/' :class="['/' === activeNav ? 'active' : '']"> NavA </router-link>
-    <router-link to='/b' :class="['/b' === activeNav ? 'active' : '']"> NavB </router-link>
-    <router-link to='/c' :class="['/c' === activeNav ? 'active' : '']"> NavC </router-link>
-    <router-link to='/d' :class="['/d' === activeNav ? 'active' : '']"> NavD </router-link>
+  <div id="nav">
+    <router-link to="/" :class="['/' === activeNav ? 'active' : '']">
+      NavA
+    </router-link>
+    <router-link to="/b" :class="['/b' === activeNav ? 'active' : '']">
+      NavB
+    </router-link>
+    <router-link to="/c" :class="['/c' === activeNav ? 'active' : '']">
+      NavC
+    </router-link>
+    <router-link to="/d" :class="['/d' === activeNav ? 'active' : '']">
+      NavD
+    </router-link>
   </div>
 </template>
 
@@ -18,14 +26,17 @@ export default {
       const { matched, ...rest } = route
       return rest.fullPath
     })
-    watch(() => currentLocation, path => {
-      console.log('watch', path)
-    })
+    watch(
+      () => currentLocation,
+      (path) => {
+        console.log('watch', path)
+      },
+    )
 
     return {
       activeNav: currentLocation,
     }
-  }
+  },
 }
 </script>
 
@@ -44,8 +55,8 @@ export default {
   padding: 10px;
 }
 #nav a:hover {
-   background-color: #282c34;
-   color:ghostwhite;
+  background-color: #282c34;
+  color: ghostwhite;
 }
 .active {
   background-color: #282c34;
